@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World</h1>
+
+    
+
+    <ul>
+        {% for x in api.Data %}
+            <li>{{ x.title }}</li>
+        {% endfor %}
+    </ul>
+
+    {{api.Data}}
+
+{% endblock %}
