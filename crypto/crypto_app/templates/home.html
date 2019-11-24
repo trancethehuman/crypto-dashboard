@@ -1,6 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Crypto Dashboard</h1>
+  <p class="lead">Price, News, Reddit, Twitter and more!</p>
+  <hr class="my-4">
+  <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a>
+</div>
+<br/>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Day High</th>
+      <th scope="col">Day Low</th>
+      <th scope="col">Market Cap</th>
+    </tr>
+  </thead>
+{% for key, value in price.DISPLAY.items %}
+
+  <tbody>
+    <tr>
+      <td>{{ key }}</td>
+      <td>{{ value.CAD.PRICE }}</td>
+      <td>{{ value.CAD.HIGHDAY }}</td>
+      <td>{{ value.CAD.LOWDAY }}</td>
+      <td>{{ value.CAD.MKTCAP }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br/>
+
+
+
     <div class="container">
         <div class="row">
         {% for x in api.Data %}
@@ -16,7 +52,7 @@
             <br/>
             </div>
         {% endfor %}
-        </div>
+        </div> 
     </div>
 
 
